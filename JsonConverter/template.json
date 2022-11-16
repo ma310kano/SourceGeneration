@@ -1,0 +1,17 @@
+{
+  "NamespacePath": "TestNamespace",
+  "ClassNameEnglish": "TestClass",
+  "ClassNameJapanese": "テストクラス",
+  "Properties": [
+    {
+      "TypeName": "string",
+      "PropertyNameEnglish": "Property1",
+      "PropertyNameJapanese": "プロパティ1"
+    },
+    {
+      "TypeName": "int",
+      "PropertyNameEnglish": "Property2",
+      "PropertyNameJapanese": "プロパティ2"
+    }
+  ]
+}

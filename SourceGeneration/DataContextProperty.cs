@@ -5,48 +5,27 @@
     /// </summary>
     public class DataContextProperty
     {
-        #region Constructors
-
-        /// <summary>
-        /// データのプロパティのコンテキスト
-        /// </summary>
-        /// <param name="typeName">型名</param>
-        /// <param name="propertyNameEnglish">プロパティ名(英)</param>
-        /// <param name="propertyNameJapanese">プロパティ名(日)</param>
-        public DataContextProperty(
-            string typeName,
-            string propertyNameEnglish,
-            string propertyNameJapanese)
-        {
-            TypeName = typeName;
-            PropertyNameEnglish = propertyNameEnglish;
-            PropertyNameJapanese = propertyNameJapanese;
-            ConstructorParameterName = propertyNameEnglish[0..1].ToLower() + propertyNameEnglish[1..];
-        }
-
-        #endregion
-
         #region Properties
 
         /// <summary>
         /// 型名を取得します。
         /// </summary>
-        public string TypeName { get; }
+        public string TypeName { get; set; }
 
         /// <summary>
         /// プロパティ名(英)を取得します。
         /// </summary>
-        public string PropertyNameEnglish { get; }
+        public string PropertyNameEnglish { get; set;  }
 
         /// <summary>
         /// プロパティ名(日)を取得します。
         /// </summary>
-        public string PropertyNameJapanese { get; }
+        public string PropertyNameJapanese { get; set; }
 
         /// <summary>
         /// コンストラクターの引数名を取得します。
         /// </summary>
-        public string ConstructorParameterName { get; }
+        public string ConstructorParameterName => PropertyNameEnglish[0..1].ToLower() + PropertyNameEnglish[1..];
 
         #endregion
     }

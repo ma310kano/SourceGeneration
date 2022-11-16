@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "JsonConverter": {
+      "commandName": "Project",
+      "commandLineArgs": "template.json"
+    }
+  }
+}
