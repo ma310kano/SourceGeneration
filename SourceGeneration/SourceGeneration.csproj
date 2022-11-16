@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="DataTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DataTemplate.cs</LastGenOutput>
+    </None>
     <None Update="ValueObjectUuidTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ValueObjectUuidTemplate.cs</LastGenOutput>
@@ -22,6 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="DataTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="ValueObjectUuidTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
