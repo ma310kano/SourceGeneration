@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="ConversionApp.Views.FileConversionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="640"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Border Style="{StaticResource MainBorder}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Style="{StaticResource TopMenuBorder}">
+                <StackPanel Style="{StaticResource TopMenuPanel}">
+                    <Button Content="ファイルを選択して変換" Command="{Binding NavigateToSingleFileConversionViewCommand}" Style="{StaticResource SecondaryButton}" Margin="0,0,8,0" />
+                    <Button Content="フォルダを検索して変換" Command="{Binding NavigateToMultipleFileConversionViewCommand}" Style="{StaticResource SecondaryButton}" />
+                </StackPanel>
+            </Border>
+            <ContentControl Grid.Row="1" prism:RegionManager.RegionName="Body" />
+        </Grid>
+    </Border>
+</UserControl>

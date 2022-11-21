@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="ConversionApp.Views.MultipleFileConversionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="640"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Border Style="{StaticResource MainBorder}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Style="{StaticResource BodyBorder}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="変換するフォルダー" Style="{StaticResource CaptionTextBlock}" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SourceDirectoryPath.Value}" Style="{StaticResource SelectionTextBox}" />
+                    <Button Grid.Row="0" Grid.Column="2" Content="選択" Command="{Binding SelectSourceDirectoryCommand}" Style="{StaticResource SecondaryButton}" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Style="{StaticResource BottomMenuBorder}">
+                <Button Content="変換" Command="{Binding ConvertFileCommand}" Style="{StaticResource PrimaryyButton}" HorizontalAlignment="Right" />
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

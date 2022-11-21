@@ -1,4 +1,4 @@
-﻿namespace SourceGeneration
+﻿namespace SourceGeneration.Port.Adapters
 {
     /// <summary>
     /// データのテンプレート

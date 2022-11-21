@@ -7,7 +7,7 @@
 //     コードが再生成されると失われます。
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SourceGeneration
+namespace SourceGeneration.Port.Adapters
 {
     using System;
     
@@ -15,7 +15,7 @@ namespace SourceGeneration
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+    #line 1 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class ValueObjectUuidTemplate : ValueObjectUuidTemplateBase
     {
@@ -27,28 +27,28 @@ namespace SourceGeneration
         {
             this.Write("using System.Text.RegularExpressions;\r\n\r\nnamespace ");
             
-            #line 5 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 5 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.NamespacePath));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 8 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 8 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("\r\n    /// </summary>\r\n    public record class ");
             
-            #line 10 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 10 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n        #region Constructors\r\n\r\n        /// <summary>\r\n        /// ");
             
-            #line 15 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 15 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
@@ -56,7 +56,7 @@ namespace SourceGeneration
             this.Write("を初期化します。\r\n        /// </summary>\r\n        /// <param name=\"value\">値</param>\r\n    " +
                     "    private ");
             
-            #line 18 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 18 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -82,28 +82,28 @@ namespace SourceGeneration
         /// <summary>
         /// ");
             
-            #line 37 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 37 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("を作成します。\r\n        /// </summary>\r\n        /// <returns>作成した");
             
-            #line 39 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 39 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("を返します。</returns>\r\n        public static ");
             
-            #line 40 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 40 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
             #line hidden
             this.Write(" Create()\r\n        {\r\n            ");
             
-            #line 42 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 42 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -111,7 +111,7 @@ namespace SourceGeneration
             this.Write(" product;\r\n            {\r\n                string value = Guid.NewGuid().ToString(" +
                     ");\r\n                product = new ");
             
-            #line 45 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 45 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -119,7 +119,7 @@ namespace SourceGeneration
             this.Write("(value);\r\n            }\r\n\r\n            return product;\r\n        }\r\n\r\n        /// " +
                     "<summary>\r\n        /// 文字列を解析し、");
             
-            #line 52 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 52 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
@@ -127,7 +127,7 @@ namespace SourceGeneration
             this.Write("を作成します。\r\n        /// </summary>\r\n        /// <param name=\"s\">文字列</param>\r\n       " +
                     " /// <returns>作成した");
             
-            #line 55 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 55 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
@@ -136,7 +136,7 @@ namespace SourceGeneration
                     "<c>null</c> です。</exception>\r\n        /// <exception cref=\"ArgumentException\">検証に" +
                     "失敗しました。</exception>\r\n        public static ");
             
-            #line 58 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 58 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -150,7 +150,7 @@ namespace SourceGeneration
 
             ");
             
-            #line 65 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 65 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -158,7 +158,7 @@ namespace SourceGeneration
             this.Write(" product = new(s);\r\n            return product;\r\n        }\r\n\r\n        /// <summar" +
                     "y>\r\n        /// 文字列を解析し、");
             
-            #line 70 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 70 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
@@ -168,7 +168,7 @@ namespace SourceGeneration
                     "c>。それ以外の場合は、<c>false</c>。</returns>\r\n        public static bool TryParse(string " +
                     "s, out ");
             
-            #line 75 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 75 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -177,7 +177,7 @@ namespace SourceGeneration
                     "_);\r\n            return isSucceeded;\r\n        }\r\n        \r\n        /// <summary>" +
                     "\r\n        /// 文字列を解析し、");
             
-            #line 82 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 82 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
@@ -190,7 +190,7 @@ namespace SourceGeneration
         /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、<c>false</c>。</returns>
         public static bool TryParse(string s, out ");
             
-            #line 88 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 88 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -210,7 +210,7 @@ namespace SourceGeneration
             {
                 result = new ");
             
-            #line 101 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 101 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -247,7 +247,7 @@ namespace SourceGeneration
             {
                 message = """);
             
-            #line 131 "C:\Users\ma310\source\repos\DomainObjectGenerator\SourceGeneration\ValueObjectUuidTemplate.tt"
+            #line 131 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectUuidTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
