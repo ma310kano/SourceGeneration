@@ -90,6 +90,9 @@ namespace SourceGeneration.Application
                 case FileTypeId.ValueObjectUuid:
                     ConvertValueObjectUuidFile(json, destinationDirectoryPath);
                     break;
+                case FileTypeId.ValueObjectInt32:
+                    ConvertValueObjectInt32File(json, destinationDirectoryPath);
+                    break;
                 case FileTypeId.Data:
                     ConvertDataFile(json, destinationDirectoryPath);
                     break;
@@ -122,6 +125,36 @@ namespace SourceGeneration.Application
             string contents;
             {
                 ValueObjectUuidTemplate template = new(context);
+                contents = template.TransformText();
+            }
+
+            File.WriteAllText(filePath, contents);
+        }
+
+        /// <summary>
+        /// ファイルを変換します。
+        /// </summary>
+        /// <param name="json">JSON文字列</param>
+        /// <param name="destinationDirectoryPath">変換先のディレクトリーパス</param>
+        private static void ConvertValueObjectInt32File(string json, string destinationDirectoryPath)
+        {
+            ValueObjectInt32Context context;
+            {
+                ValueObjectInt32Context? nullableContext = JsonSerializer.Deserialize<ValueObjectInt32Context>(json);
+                if (nullableContext is null) throw new InvalidOperationException("無効な JSON ファイルです。");
+
+                context = nullableContext;
+            }
+
+            string filePath;
+            {
+                string fileName = context.ClassNameEnglish + ".cs";
+                filePath = Path.Combine(destinationDirectoryPath, fileName);
+            }
+
+            string contents;
+            {
+                ValueObjectInt32Template template = new(context);
                 contents = template.TransformText();
             }
 

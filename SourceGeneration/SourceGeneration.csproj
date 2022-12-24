@@ -11,6 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Port.Adapters\ValueObjectInt32Template.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ValueObjectInt32Template.cs</LastGenOutput>
+    </None>
+    <None Update="templates\valueobject_int32.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="templates\valueobject_uuid.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -36,6 +43,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>DataTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Port.Adapters\ValueObjectInt32Template.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ValueObjectInt32Template.tt</DependentUpon>
     </Compile>
     <Compile Update="Port.Adapters\ValueObjectUuidTemplate.cs">
       <DesignTime>True</DesignTime>

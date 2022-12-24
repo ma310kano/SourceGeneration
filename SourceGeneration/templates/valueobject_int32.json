@@ -1,0 +1,9 @@
+{
+  "FileType": "ValueObjectInt32",
+  "NamespacePath": "TestNamespace",
+  "ClassNameEnglish": "TestClass",
+  "ClassNameJapanese": "テストクラス",
+  "MinimumValue": 0,
+  "MaximumValue": 999999999,
+  "DefaultValue": 0
+}

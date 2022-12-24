@@ -19,6 +19,7 @@ namespace SourceGeneration.Application
             string fileName = command.FileTypeId switch
             {
                 FileTypeId.ValueObjectUuid => "valueobject_uuid.json",
+                FileTypeId.ValueObjectInt32 => "valueobject_int32.json",
                 FileTypeId.Data => "data.json",
                 _ => throw new InvalidOperationException("ファイル種別が定義されていません。"),
             };
