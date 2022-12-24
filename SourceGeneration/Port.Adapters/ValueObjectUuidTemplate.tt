@@ -9,6 +9,15 @@ namespace <#= _context.NamespacePath #>
     /// </summary>
     public record class <#= _context.ClassNameEnglish #>
     {
+        #region Fields
+
+        /// <summary>
+        /// デフォルト
+        /// </summary>
+        public static readonly <#= _context.ClassNameEnglish #> Default = new("00000000-0000-0000-0000-000000000000");
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
@@ -72,7 +81,7 @@ namespace <#= _context.NamespacePath #>
         /// <param name="s">文字列</param>
         /// <param name="result">結果</param>
         /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、<c>false</c>。</returns>
-        public static bool TryParse(string s, out <#= _context.ClassNameEnglish #>? result)
+        public static bool TryParse(string s, out <#= _context.ClassNameEnglish #> result)
         {
             bool isSucceeded = TryParse(s, out result, out _);
             return isSucceeded;
@@ -85,12 +94,12 @@ namespace <#= _context.NamespacePath #>
         /// <param name="result">結果</param>
         /// <param name="message">メッセージ</param>
         /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、<c>false</c>。</returns>
-        public static bool TryParse(string s, out <#= _context.ClassNameEnglish #>? result, out string message)
+        public static bool TryParse(string s, out <#= _context.ClassNameEnglish #> result, out string message)
         {
             if (s is null)
             {
-                result = null;
-                message = $"{nameof(s)} が null です。";
+                result = Default;
+                message = "文字列が無効です。";
                 return false;
             }
 
@@ -102,7 +111,7 @@ namespace <#= _context.NamespacePath #>
             }
             else
             {
-                result = null;
+                result = Default;
             }
 
             return isSucceeded;
@@ -124,7 +133,7 @@ namespace <#= _context.NamespacePath #>
 
             if (isValid)
             {
-                message = "検証に成功しました。";
+                message = string.Empty;
             }
             else
             {
