@@ -5,22 +5,42 @@
     /// </summary>
     public class ValueObjectUuidContext
     {
+        #region Constructors
+
+        /// <summary>
+        /// 値オブジェクト(UUID)のコンテキストを初期化します。
+        /// </summary>
+        /// <param name="namespacePath">名前空間のパス</param>
+        /// <param name="classNameEnglish">クラス名(英)</param>
+        /// <param name="classNameJapanese">クラス名(日)</param>
+        public ValueObjectUuidContext(
+            string namespacePath,
+            string classNameEnglish,
+            string classNameJapanese)
+        {
+            NamespacePath = namespacePath;
+            ClassNameEnglish = classNameEnglish;
+            ClassNameJapanese = classNameJapanese;
+        }
+
+        #endregion
+
         #region Properties
 
         /// <summary>
         /// 名前空間のパスを設定または取得します。
         /// </summary>
-        public string NamespacePath { get; set; }
+        public string NamespacePath { get; }
 
         /// <summary>
         /// クラス名(英)を設定または取得します。
         /// </summary>
-        public string ClassNameEnglish { get; set; }
+        public string ClassNameEnglish { get; }
 
         /// <summary>
         /// クラス名(日)を設定または取得します。
         /// </summary>
-        public string ClassNameJapanese { get; set; }
+        public string ClassNameJapanese { get; }
 
         #endregion
 
