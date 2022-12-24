@@ -31,22 +31,22 @@
         #region Properties
 
         /// <summary>
-        /// 名前空間のパスを設定または取得します。
+        /// 名前空間のパスを取得します。
         /// </summary>
         public string NamespacePath { get; }
 
         /// <summary>
-        /// クラス名(英)を設定または取得します。
+        /// クラス名(英)を取得します。
         /// </summary>
         public string ClassNameEnglish { get; }
 
         /// <summary>
-        /// クラス名(日)を設定または取得します。
+        /// クラス名(日)を取得します。
         /// </summary>
         public string ClassNameJapanese { get; }
 
         /// <summary>
-        /// プロパティのコレクションを設定または取得します。
+        /// プロパティのコレクションを取得します。
         /// </summary>
         public IReadOnlyCollection<DataContextProperty> Properties { get; }
 
