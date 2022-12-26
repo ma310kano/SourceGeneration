@@ -16,6 +16,11 @@
         ValueObjectInt32,
 
         /// <summary>
+        /// 値オブジェクト(文字列)
+        /// </summary>
+        ValueObjectString,
+
+        /// <summary>
         /// データ
         /// </summary>
         Data,

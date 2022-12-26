@@ -1,0 +1,8 @@
+{
+  "FileType": "ValueObjectString",
+  "NamespacePath": "TestNamespace",
+  "ClassNameEnglish": "TestClass",
+  "ClassNameJapanese": "テストクラス",
+  "Pattern": "[0-9]{5}",
+  "PatternDescription": "半角数字5桁"
+}

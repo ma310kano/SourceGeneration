@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Port.Adapters\ValueObjectStringTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ValueObjectStringTemplate.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.CodeDom" Version="7.0.0" />
   </ItemGroup>
 
@@ -15,7 +23,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ValueObjectInt32Template.cs</LastGenOutput>
     </None>
+    <None Update="Port.Adapters\ValueObjectStringTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ValueObjectStringTemplate.cs</LastGenOutput>
+    </None>
     <None Update="templates\valueobject_int32.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="templates\valueobject_string.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="templates\valueobject_uuid.json">
@@ -48,6 +63,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ValueObjectInt32Template.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Port.Adapters\ValueObjectStringTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ValueObjectStringTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="Port.Adapters\ValueObjectUuidTemplate.cs">
       <DesignTime>True</DesignTime>
