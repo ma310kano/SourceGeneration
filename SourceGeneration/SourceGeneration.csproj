@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Port.Adapters\EntityTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityTemplate.tt</DependentUpon>
+    </None>
     <None Include="Port.Adapters\ValueObjectStringTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -19,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Port.Adapters\EntityTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EntityTemplate.cs</LastGenOutput>
+    </None>
     <None Update="Port.Adapters\ValueObjectInt32Template.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ValueObjectInt32Template.cs</LastGenOutput>
@@ -26,6 +35,9 @@
     <None Update="Port.Adapters\ValueObjectStringTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ValueObjectStringTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="templates\entity.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="templates\valueobject_int32.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -58,6 +70,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>DataTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Port.Adapters\EntityTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="Port.Adapters\ValueObjectInt32Template.cs">
       <DesignTime>True</DesignTime>

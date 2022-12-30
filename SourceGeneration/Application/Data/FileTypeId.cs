@@ -21,6 +21,11 @@
         ValueObjectString,
 
         /// <summary>
+        /// エンティティ
+        /// </summary>
+        Entity,
+
+        /// <summary>
         /// データ
         /// </summary>
         Data,
