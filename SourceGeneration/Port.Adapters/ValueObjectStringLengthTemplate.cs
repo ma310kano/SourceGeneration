@@ -25,23 +25,23 @@ namespace SourceGeneration.Port.Adapters
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nnamespace ");
+            this.Write("namespace ");
             
-            #line 4 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 3 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.NamespacePath));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 7 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 6 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("\r\n    /// </summary>\r\n    public record class ");
             
-            #line 9 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 8 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -49,7 +49,7 @@ namespace SourceGeneration.Port.Adapters
             this.Write("\r\n    {\r\n        #region Fields\r\n\r\n        /// <summary>\r\n        /// デフォルト\r\n    " +
                     "    /// </summary>\r\n        public static readonly ");
             
-            #line 16 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 15 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -57,7 +57,7 @@ namespace SourceGeneration.Port.Adapters
             this.Write(" Default = new(string.Empty);\r\n\r\n        #endregion\r\n\r\n        #region Constructo" +
                     "rs\r\n\r\n        /// <summary>\r\n        /// ");
             
-            #line 23 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 22 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
@@ -65,7 +65,7 @@ namespace SourceGeneration.Port.Adapters
             this.Write("を初期化します。\r\n        /// </summary>\r\n        /// <param name=\"value\">値</param>\r\n    " +
                     "    private ");
             
-            #line 26 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 25 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -95,7 +95,7 @@ namespace SourceGeneration.Port.Adapters
         /// <returns>解析した結果を返します。</returns>
         public static ");
             
-            #line 49 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 48 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -105,7 +105,7 @@ namespace SourceGeneration.Port.Adapters
                     "            if (!success) throw new ArgumentException(message, nameof(s));\r\n\r\n  " +
                     "          ");
             
-            #line 56 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 55 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -123,7 +123,7 @@ namespace SourceGeneration.Port.Adapters
         /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
         public static bool TryParse(string s, out ");
             
-            #line 67 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 66 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -142,7 +142,7 @@ namespace SourceGeneration.Port.Adapters
         /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
         public static bool TryParse(string s, out ");
             
-            #line 79 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 78 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -161,7 +161,7 @@ namespace SourceGeneration.Port.Adapters
             {
                 result = new ");
             
-            #line 91 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 90 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -186,7 +186,7 @@ namespace SourceGeneration.Port.Adapters
         {
             bool success = s.Length <= ");
             
-            #line 109 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 108 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.MaximumLength));
             
             #line default
@@ -195,14 +195,14 @@ namespace SourceGeneration.Port.Adapters
                     "pty;\r\n            }\r\n            else\r\n            {\r\n                message = " +
                     "\"");
             
-            #line 117 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 116 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("は、");
             
-            #line 117 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 116 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.MaximumLength));
             
             #line default

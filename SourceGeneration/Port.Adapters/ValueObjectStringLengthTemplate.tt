@@ -1,6 +1,5 @@
 ﻿<#@ template language="C#" #>
 <#@ assembly name="System.Core" #>
-
 namespace <#= _context.NamespacePath #>
 {
     /// <summary>
