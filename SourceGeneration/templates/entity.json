@@ -1,5 +1,6 @@
 {
   "FileType": "Entity",
+  "Usings": [ "TestNamespace.Another" ],
   "NamespacePath": "TestNamespace",
   "ClassNameEnglish": "TestClass",
   "ClassNameJapanese": "テストクラス",
