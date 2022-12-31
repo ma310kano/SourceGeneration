@@ -1,16 +1,16 @@
 ﻿namespace SourceGeneration.Port.Adapters
 {
     /// <summary>
-    /// 値オブジェクト(文字列)のテンプレート
+    /// 値オブジェクト(文字列パターン)のテンプレート
     /// </summary>
-    public partial class ValueObjectStringTemplate
+    public partial class ValueObjectStringPatternTemplate
     {
         #region Fields
 
         /// <summary>
         /// コンテキスト
         /// </summary>
-        private readonly ValueObjectStringContext _context;
+        private readonly ValueObjectStringPatternContext _context;
 
         #endregion
 
@@ -20,7 +20,7 @@
         /// 値オブジェクト(文字列)のテンプレートを初期化します。
         /// </summary>
         /// <param name="context">コンテキスト</param>
-        public ValueObjectStringTemplate(ValueObjectStringContext context)
+        public ValueObjectStringPatternTemplate(ValueObjectStringPatternContext context)
         {
             _context = context;
         }

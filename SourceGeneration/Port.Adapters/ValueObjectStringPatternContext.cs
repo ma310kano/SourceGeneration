@@ -1,21 +1,21 @@
 ﻿namespace SourceGeneration.Port.Adapters
 {
     /// <summary>
-    /// 値オブジェクト(文字列)のコンテキスト
+    /// 値オブジェクト(文字列パターン)のコンテキスト
     /// </summary>
-    public class ValueObjectStringContext
+    public class ValueObjectStringPatternContext
     {
         #region Constructors
 
         /// <summary>
-        /// 値オブジェクト(文字列)のコンテキストを初期化します。
+        /// 値オブジェクト(文字列パターン)のコンテキストを初期化します。
         /// </summary>
         /// <param name="namespacePath">名前空間のパス</param>
         /// <param name="classNameEnglish">クラス名(英)</param>
         /// <param name="classNameJapanese">クラス名(日)</param>
         /// <param name="pattern">パターン</param>
         /// <param name="patternDescription">パターンの説明</param>
-        public ValueObjectStringContext(
+        public ValueObjectStringPatternContext(
             string namespacePath,
             string classNameEnglish,
             string classNameJapanese,
@@ -68,7 +68,7 @@
         /// <returns>現在のオブジェクトを表す文字列。</returns>
         public override string ToString()
         {
-            return $"{nameof(ValueObjectStringContext)} {{ {nameof(NamespacePath)} = {NamespacePath}, {nameof(ClassNameEnglish)} = {ClassNameEnglish}, {nameof(ClassNameJapanese)} = {ClassNameJapanese}, {nameof(Pattern)} = {Pattern}, {nameof(PatternDescription)} = {PatternDescription} }}";
+            return $"{nameof(ValueObjectStringPatternContext)} {{ {nameof(NamespacePath)} = {NamespacePath}, {nameof(ClassNameEnglish)} = {ClassNameEnglish}, {nameof(ClassNameJapanese)} = {ClassNameJapanese}, {nameof(Pattern)} = {Pattern}, {nameof(PatternDescription)} = {PatternDescription} }}";
         }
 
         #endregion

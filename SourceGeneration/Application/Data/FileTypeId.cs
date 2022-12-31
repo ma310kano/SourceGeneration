@@ -16,9 +16,9 @@
         ValueObjectInt32,
 
         /// <summary>
-        /// 値オブジェクト(文字列)
+        /// 値オブジェクト(文字列パターン)
         /// </summary>
-        ValueObjectString,
+        ValueObjectStringPattern,
 
         /// <summary>
         /// エンティティ

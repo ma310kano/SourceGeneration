@@ -1,5 +1,5 @@
 {
-  "FileType": "ValueObjectString",
+  "FileType": "ValueObjectStringPattern",
   "NamespacePath": "TestNamespace",
   "ClassNameEnglish": "TestClass",
   "ClassNameJapanese": "テストクラス",

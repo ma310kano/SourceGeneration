@@ -12,11 +12,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityTemplate.tt</DependentUpon>
     </None>
-    <None Include="Port.Adapters\ValueObjectStringTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ValueObjectStringTemplate.tt</DependentUpon>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -32,9 +27,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ValueObjectInt32Template.cs</LastGenOutput>
     </None>
-    <None Update="Port.Adapters\ValueObjectStringTemplate.tt">
+    <None Update="Port.Adapters\ValueObjectStringPatternTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ValueObjectStringTemplate.cs</LastGenOutput>
+      <LastGenOutput>ValueObjectStringPatternTemplate.cs</LastGenOutput>
     </None>
     <None Update="templates\entity.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -42,7 +37,7 @@
     <None Update="templates\valueobject_int32.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="templates\valueobject_string.json">
+    <None Update="templates\valueobject_string_pattern.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="templates\valueobject_uuid.json">
@@ -81,10 +76,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ValueObjectInt32Template.tt</DependentUpon>
     </Compile>
-    <Compile Update="Port.Adapters\ValueObjectStringTemplate.cs">
+    <Compile Update="Port.Adapters\ValueObjectStringPatternTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ValueObjectStringTemplate.tt</DependentUpon>
+      <DependentUpon>ValueObjectStringPatternTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="Port.Adapters\ValueObjectUuidTemplate.cs">
       <DesignTime>True</DesignTime>

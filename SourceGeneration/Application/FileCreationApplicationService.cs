@@ -20,7 +20,7 @@ namespace SourceGeneration.Application
             {
                 FileTypeId.ValueObjectUuid => "valueobject_uuid.json",
                 FileTypeId.ValueObjectInt32 => "valueobject_int32.json",
-                FileTypeId.ValueObjectString => "valueobject_string.json",
+                FileTypeId.ValueObjectStringPattern => "valueobject_string_pattern.json",
                 FileTypeId.Entity => "entity.json",
                 FileTypeId.Data => "data.json",
                 _ => throw new InvalidOperationException("ファイル種別が定義されていません。"),

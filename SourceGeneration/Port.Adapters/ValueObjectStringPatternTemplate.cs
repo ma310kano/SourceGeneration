@@ -15,9 +15,9 @@ namespace SourceGeneration.Port.Adapters
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+    #line 1 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
-    public partial class ValueObjectStringTemplate : ValueObjectStringTemplateBase
+    public partial class ValueObjectStringPatternTemplate : ValueObjectStringPatternTemplateBase
     {
 #line hidden
         /// <summary>
@@ -27,21 +27,21 @@ namespace SourceGeneration.Port.Adapters
         {
             this.Write("using System.Text.RegularExpressions;\r\n\r\nnamespace ");
             
-            #line 5 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 5 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.NamespacePath));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 8 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 8 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("\r\n    /// </summary>\r\n    public record class ");
             
-            #line 10 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 10 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -49,7 +49,7 @@ namespace SourceGeneration.Port.Adapters
             this.Write("\r\n    {\r\n        #region Fields\r\n\r\n        /// <summary>\r\n        /// デフォルト\r\n    " +
                     "    /// </summary>\r\n        public static readonly ");
             
-            #line 17 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 17 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -57,7 +57,7 @@ namespace SourceGeneration.Port.Adapters
             this.Write(" Default = new(string.Empty);\r\n\r\n        #endregion\r\n\r\n        #region Constructo" +
                     "rs\r\n\r\n        /// <summary>\r\n        /// ");
             
-            #line 24 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 24 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
@@ -65,7 +65,7 @@ namespace SourceGeneration.Port.Adapters
             this.Write("を初期化します。\r\n        /// </summary>\r\n        /// <param name=\"value\">値</param>\r\n    " +
                     "    private ");
             
-            #line 27 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 27 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -95,7 +95,7 @@ namespace SourceGeneration.Port.Adapters
         /// <returns>解析した結果を返します。</returns>
         public static ");
             
-            #line 50 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 50 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -105,7 +105,7 @@ namespace SourceGeneration.Port.Adapters
                     "            if (!success) throw new ArgumentException(message, nameof(s));\r\n\r\n  " +
                     "          ");
             
-            #line 57 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 57 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -123,7 +123,7 @@ namespace SourceGeneration.Port.Adapters
         /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
         public static bool TryParse(string s, out ");
             
-            #line 68 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 68 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -142,7 +142,7 @@ namespace SourceGeneration.Port.Adapters
         /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
         public static bool TryParse(string s, out ");
             
-            #line 80 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 80 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -161,7 +161,7 @@ namespace SourceGeneration.Port.Adapters
             {
                 result = new ");
             
-            #line 92 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 92 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
@@ -186,7 +186,7 @@ namespace SourceGeneration.Port.Adapters
         {
             const string pattern = """);
             
-            #line 110 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 110 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.Pattern));
             
             #line default
@@ -195,14 +195,14 @@ namespace SourceGeneration.Port.Adapters
                     "ess)\r\n            {\r\n                message = string.Empty;\r\n            }\r\n   " +
                     "         else\r\n            {\r\n                message = \"");
             
-            #line 119 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 119 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("は、");
             
-            #line 119 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringTemplate.tt"
+            #line 119 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringPatternTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.PatternDescription));
             
             #line default
@@ -220,7 +220,7 @@ namespace SourceGeneration.Port.Adapters
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
-    public class ValueObjectStringTemplateBase
+    public class ValueObjectStringPatternTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

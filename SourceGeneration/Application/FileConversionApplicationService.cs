@@ -93,8 +93,8 @@ namespace SourceGeneration.Application
                 case FileTypeId.ValueObjectInt32:
                     ConvertValueObjectInt32File(json, destinationDirectoryPath);
                     break;
-                case FileTypeId.ValueObjectString:
-                    ConvertValueObjectStringFile(json, destinationDirectoryPath);
+                case FileTypeId.ValueObjectStringPattern:
+                    ConvertValueObjectStringPatternFile(json, destinationDirectoryPath);
                     break;
                 case FileTypeId.Entity:
                     ConvertEntityFile(json, destinationDirectoryPath);
@@ -172,11 +172,11 @@ namespace SourceGeneration.Application
         /// </summary>
         /// <param name="json">JSON文字列</param>
         /// <param name="destinationDirectoryPath">変換先のディレクトリーパス</param>
-        private static void ConvertValueObjectStringFile(string json, string destinationDirectoryPath)
+        private static void ConvertValueObjectStringPatternFile(string json, string destinationDirectoryPath)
         {
-            ValueObjectStringContext context;
+            ValueObjectStringPatternContext context;
             {
-                ValueObjectStringContext? nullableContext = JsonSerializer.Deserialize<ValueObjectStringContext>(json);
+                ValueObjectStringPatternContext? nullableContext = JsonSerializer.Deserialize<ValueObjectStringPatternContext>(json);
                 if (nullableContext is null) throw new InvalidOperationException("無効な JSON ファイルです。");
 
                 context = nullableContext;
@@ -190,7 +190,7 @@ namespace SourceGeneration.Application
 
             string contents;
             {
-                ValueObjectStringTemplate template = new(context);
+                ValueObjectStringPatternTemplate template = new(context);
                 contents = template.TransformText();
             }
 
