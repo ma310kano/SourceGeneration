@@ -19,7 +19,8 @@ namespace SourceGeneration.Application
             {
                 new FileTypeData(FileTypeId.ValueObjectUuid, "値オブジェクト(UUID)", "valueobject_uuid.json"),
                 new FileTypeData(FileTypeId.ValueObjectInt32, "値オブジェクト(符号付き 32 ビット整数)", "valueobject_int32.json"),
-                new FileTypeData(FileTypeId.ValueObjectStringPattern, "値オブジェクト(文字列パターン)", "valueobject_string_pattern.json"),
+                new FileTypeData(FileTypeId.ValueObjectStringLength, "値オブジェクト(文字列 - 文字数)", "valueobject_string_length.json"),
+                new FileTypeData(FileTypeId.ValueObjectStringPattern, "値オブジェクト(文字列 - パターン)", "valueobject_string_pattern.json"),
                 new FileTypeData(FileTypeId.Entity, "エンティティ", "entity.json"),
                 new FileTypeData(FileTypeId.Data, "データ", "data.json"),
             };

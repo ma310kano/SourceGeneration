@@ -20,6 +20,7 @@ namespace SourceGeneration.Application
             {
                 FileTypeId.ValueObjectUuid => "valueobject_uuid.json",
                 FileTypeId.ValueObjectInt32 => "valueobject_int32.json",
+                FileTypeId.ValueObjectStringLength => "valueobject_string_length.json",
                 FileTypeId.ValueObjectStringPattern => "valueobject_string_pattern.json",
                 FileTypeId.Entity => "entity.json",
                 FileTypeId.Data => "data.json",

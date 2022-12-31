@@ -16,7 +16,12 @@
         ValueObjectInt32,
 
         /// <summary>
-        /// 値オブジェクト(文字列パターン)
+        /// 値オブジェクト(文字列 - 文字列数)
+        /// </summary>
+        ValueObjectStringLength,
+
+        /// <summary>
+        /// 値オブジェクト(文字列 - パターン)
         /// </summary>
         ValueObjectStringPattern,
 

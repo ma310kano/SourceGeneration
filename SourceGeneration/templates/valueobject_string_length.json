@@ -1,0 +1,7 @@
+{
+  "FileType": "ValueObjectStringLength",
+  "NamespacePath": "TestNamespace",
+  "ClassNameEnglish": "TestClass",
+  "ClassNameJapanese": "テストクラス",
+  "MaximumLength": 20
+}

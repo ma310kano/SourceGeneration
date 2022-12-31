@@ -12,6 +12,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityTemplate.tt</DependentUpon>
     </None>
+    <None Include="Port.Adapters\ValueObjectStringLengthTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ValueObjectStringLengthTemplate.tt</DependentUpon>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +32,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ValueObjectInt32Template.cs</LastGenOutput>
     </None>
+    <None Update="Port.Adapters\ValueObjectStringLengthTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ValueObjectStringLengthTemplate.cs</LastGenOutput>
+    </None>
     <None Update="Port.Adapters\ValueObjectStringPatternTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ValueObjectStringPatternTemplate.cs</LastGenOutput>
@@ -35,6 +44,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="templates\valueobject_int32.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="templates\valueobject_string_length.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="templates\valueobject_string_pattern.json">
@@ -75,6 +87,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ValueObjectInt32Template.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Port.Adapters\ValueObjectStringLengthTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ValueObjectStringLengthTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="Port.Adapters\ValueObjectStringPatternTemplate.cs">
       <DesignTime>True</DesignTime>
