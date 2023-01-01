@@ -73,7 +73,7 @@ namespace SourceGeneration.Port.Adapters
             this.Write(@"(string value)
         {
             bool success = Validate(value, out string message);
-            if (!success) throw new ArgumentException(message, nameo(value));
+            if (!success) throw new ArgumentException(message, nameof(value));
 
             Value = value;
         }
