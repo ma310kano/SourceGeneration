@@ -63,7 +63,7 @@ namespace SourceGeneration.Port.Adapters
             #line default
             #line hidden
             this.Write("を初期化します。\r\n        /// </summary>\r\n        /// <param name=\"value\">値</param>\r\n    " +
-                    "    private ");
+                    "    public ");
             
             #line 25 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
@@ -72,6 +72,9 @@ namespace SourceGeneration.Port.Adapters
             #line hidden
             this.Write(@"(string value)
         {
+            bool success = Validate(value, out string message);
+            if (!success) throw new ArgumentException(message, nameo(value));
+
             Value = value;
         }
 
@@ -89,104 +92,16 @@ namespace SourceGeneration.Port.Adapters
         #region Methods
 
         /// <summary>
-        /// 文字列を解析します。
-        /// </summary>
-        /// <param name=""s"">文字列</param>
-        /// <returns>解析した結果を返します。</returns>
-        public static ");
-            
-            #line 48 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(" Parse(string s)\r\n        {\r\n            if (s is null) throw new ArgumentNullExc" +
-                    "eption(nameof(s));\r\n\r\n            bool success = Validate(s, out var message);\r\n" +
-                    "            if (!success) throw new ArgumentException(message, nameof(s));\r\n\r\n  " +
-                    "          ");
-            
-            #line 55 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(@" result = new(s);
-
-            return result;
-        }
-
-        /// <summary>
-        /// 文字列を解析します。
-        /// </summary>
-        /// <param name=""s"">文字列</param>
-        /// <param name=""result"">結果</param>
-        /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
-        public static bool TryParse(string s, out ");
-            
-            #line 66 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(@" result)
-        {
-            return TryParse(s, out result, out _);
-        }
-
-        /// <summary>
-        /// 文字列を解析します。
-        /// </summary>
-        /// <param name=""s"">文字列</param>
-        /// <param name=""result"">結果</param>
-        /// <param name=""message"">メッセージ</param>
-        /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
-        public static bool TryParse(string s, out ");
-            
-            #line 78 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(@" result, out string message)
-        {
-            if (s is null)
-            {
-                result = Default;
-                message = ""文字列が無効です。"";
-                return false;
-            }
-
-            bool success = Validate(s, out message);
-            if (success)
-            {
-                result = new ");
-            
-            #line 90 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(@"(s);
-            }
-            else
-            {
-                result = Default;
-            }
-
-            return success;
-        }
-
-        /// <summary>
         /// 文字列を検証します。
         /// </summary>
         /// <param name=""s"">文字列</param>
         /// <param name=""message"">メッセージ</param>
         /// <returns>検証に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
-        private static bool Validate(string s, out string message)
+        public static bool Validate(string s, out string message)
         {
             bool success = s.Length <= ");
             
-            #line 108 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 54 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.MaximumLength));
             
             #line default
@@ -195,14 +110,14 @@ namespace SourceGeneration.Port.Adapters
                     "pty;\r\n            }\r\n            else\r\n            {\r\n                message = " +
                     "\"");
             
-            #line 116 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 62 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("は、");
             
-            #line 116 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
+            #line 62 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectStringLengthTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.MaximumLength));
             
             #line default

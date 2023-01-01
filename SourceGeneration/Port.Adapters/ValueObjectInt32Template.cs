@@ -86,7 +86,7 @@ namespace SourceGeneration.Port.Adapters
             #line default
             #line hidden
             this.Write("を初期化します。\r\n        /// </summary>\r\n        /// <param name=\"value\">値</param>\r\n    " +
-                    "    private ");
+                    "    public ");
             
             #line 35 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectInt32Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
@@ -95,6 +95,9 @@ namespace SourceGeneration.Port.Adapters
             #line hidden
             this.Write(@"(int value)
         {
+            bool success = Validate(value, out string message);
+            if (!success) throw new ArgumentException(message, nameof(value));
+
             Value = value;
         }
 
@@ -112,89 +115,12 @@ namespace SourceGeneration.Port.Adapters
         #region Methods
         
         /// <summary>
-        /// 数値を解析します。
-        /// </summary>
-        /// <param name=""num"">数値</param>
-        /// <returns>解析した結果を返します。</returns>
-        public static ");
-            
-            #line 58 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectInt32Template.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(" Parse(int num)\r\n        {\r\n            bool success = Validate(num, out var mess" +
-                    "age);\r\n            if (!success) throw new ArgumentException(message, nameof(num" +
-                    "));\r\n\r\n            ");
-            
-            #line 63 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectInt32Template.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(@" result = new(num);
-
-            return result;
-        }
-
-        /// <summary>
-        /// 数値を解析します。
-        /// </summary>
-        /// <param name=""num"">数値</param>
-        /// <param name=""result"">結果</param>
-        /// <returns>解析した結果を返します。</returns>
-        public static bool TryParse(int num, out ");
-            
-            #line 74 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectInt32Template.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(@" result)
-        {
-            return TryParse(num, out result, out _);
-        }
-
-        /// <summary>
-        /// 数値を解析します。
-        /// </summary>
-        /// <param name=""num"">数値</param>
-        /// <param name=""result"">結果</param>
-        /// <param name=""message"">メッセージ</param>
-        /// <returns>解析した結果を返します。</returns>
-        public static bool TryParse(int num, out ");
-            
-            #line 86 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectInt32Template.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(" result, out string message)\r\n        {\r\n            bool success = Validate(num," +
-                    " out message);\r\n            if (success)\r\n            {\r\n                result " +
-                    "= new ");
-            
-            #line 91 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectInt32Template.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
-            
-            #line default
-            #line hidden
-            this.Write(@"(num);
-            }
-            else
-            {
-                result = Default;
-            }
-
-            return success;
-        }
-
-        /// <summary>
         /// 数値を検証します。
         /// </summary>
         /// <param name=""num"">数値</param>
         /// <param name=""message"">メッセージ</param>
         /// <returns>検証に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
-        private static bool Validate(int num, out string message)
+        public static bool Validate(int num, out string message)
         {
             bool success = _minimumValue <= num && num <= _maximumValue;
 
@@ -206,7 +132,7 @@ namespace SourceGeneration.Port.Adapters
             {
                 message = $""");
             
-            #line 117 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectInt32Template.tt"
+            #line 72 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\ValueObjectInt32Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default

@@ -24,8 +24,11 @@ namespace <#= _context.NamespacePath #>
         /// <#= _context.ClassNameJapanese #>を初期化します。
         /// </summary>
         /// <param name="value">値</param>
-        private <#= _context.ClassNameEnglish #>(string value)
+        public <#= _context.ClassNameEnglish #>(string value)
         {
+            bool success = Validate(value, out string message);
+            if (!success) throw new ArgumentException(message, nameof(value));
+
             Value = value;
         }
 
@@ -58,80 +61,20 @@ namespace <#= _context.NamespacePath #>
         }
 
         /// <summary>
-        /// 文字列を解析し、<#= _context.ClassNameJapanese #>を作成します。
-        /// </summary>
-        /// <param name="s">文字列</param>
-        /// <returns>作成した<#= _context.ClassNameJapanese #>を返します。</returns>
-        /// <exception cref="ArgumentNullException"><c>s</c> が <c>null</c> です。</exception>
-        /// <exception cref="ArgumentException">検証に失敗しました。</exception>
-        public static <#= _context.ClassNameEnglish #> Parse(string s)
-        {
-            if (s is null) throw new ArgumentNullException(nameof(s));
-
-            bool isSucceeded = Validate(s, out string message);
-            if (!isSucceeded) throw new ArgumentException(message, nameof(s));
-
-            <#= _context.ClassNameEnglish #> product = new(s);
-            return product;
-        }
-
-        /// <summary>
-        /// 文字列を解析し、<#= _context.ClassNameJapanese #>を作成します。
-        /// </summary>
-        /// <param name="s">文字列</param>
-        /// <param name="result">結果</param>
-        /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、<c>false</c>。</returns>
-        public static bool TryParse(string s, out <#= _context.ClassNameEnglish #> result)
-        {
-            bool isSucceeded = TryParse(s, out result, out _);
-            return isSucceeded;
-        }
-        
-        /// <summary>
-        /// 文字列を解析し、<#= _context.ClassNameJapanese #>を作成します。
-        /// </summary>
-        /// <param name="s">文字列</param>
-        /// <param name="result">結果</param>
-        /// <param name="message">メッセージ</param>
-        /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、<c>false</c>。</returns>
-        public static bool TryParse(string s, out <#= _context.ClassNameEnglish #> result, out string message)
-        {
-            if (s is null)
-            {
-                result = Default;
-                message = "文字列が無効です。";
-                return false;
-            }
-
-            bool isSucceeded = Validate(s, out message);
-            
-            if (isSucceeded)
-            {
-                result = new <#= _context.ClassNameEnglish #>(s);
-            }
-            else
-            {
-                result = Default;
-            }
-
-            return isSucceeded;
-        }
-
-        /// <summary>
         /// 文字列を検証します。
         /// </summary>
         /// <param name="s">文字列</param>
         /// <param name="message">メッセージ</param>
         /// <returns>検証に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
-        private static bool Validate(string s, out string message)
+        public static bool Validate(string s, out string message)
         {
-            bool isValid;
+            bool success;
             {
                 const string pattern = "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
-                isValid = Regex.IsMatch(s, pattern);
+                success = Regex.IsMatch(s, pattern);
             }
 
-            if (isValid)
+            if (success)
             {
                 message = string.Empty;
             }
@@ -140,7 +83,7 @@ namespace <#= _context.NamespacePath #>
                 message = "<#= _context.ClassNameJapanese #>は、UUID形式で入力してください。";
             }
 
-            return isValid;
+            return success;
         }
 
         #endregion

@@ -22,8 +22,11 @@ namespace <#= _context.NamespacePath #>
         /// <#= _context.ClassNameJapanese #>を初期化します。
         /// </summary>
         /// <param name="value">値</param>
-        private <#= _context.ClassNameEnglish #>(string value)
+        public <#= _context.ClassNameEnglish #>(string value)
         {
+            bool success = Validate(value, out string message);
+            if (!success) throw new ArgumentException(message, nameo(value));
+
             Value = value;
         }
 
@@ -41,69 +44,12 @@ namespace <#= _context.NamespacePath #>
         #region Methods
 
         /// <summary>
-        /// 文字列を解析します。
-        /// </summary>
-        /// <param name="s">文字列</param>
-        /// <returns>解析した結果を返します。</returns>
-        public static <#= _context.ClassNameEnglish #> Parse(string s)
-        {
-            if (s is null) throw new ArgumentNullException(nameof(s));
-
-            bool success = Validate(s, out var message);
-            if (!success) throw new ArgumentException(message, nameof(s));
-
-            <#= _context.ClassNameEnglish #> result = new(s);
-
-            return result;
-        }
-
-        /// <summary>
-        /// 文字列を解析します。
-        /// </summary>
-        /// <param name="s">文字列</param>
-        /// <param name="result">結果</param>
-        /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
-        public static bool TryParse(string s, out <#= _context.ClassNameEnglish #> result)
-        {
-            return TryParse(s, out result, out _);
-        }
-
-        /// <summary>
-        /// 文字列を解析します。
-        /// </summary>
-        /// <param name="s">文字列</param>
-        /// <param name="result">結果</param>
-        /// <param name="message">メッセージ</param>
-        /// <returns>解析に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
-        public static bool TryParse(string s, out <#= _context.ClassNameEnglish #> result, out string message)
-        {
-            if (s is null)
-            {
-                result = Default;
-                message = "文字列が無効です。";
-                return false;
-            }
-
-            bool success = Validate(s, out message);
-            if (success)
-            {
-                result = new <#= _context.ClassNameEnglish #>(s);
-            }
-            else
-            {
-                result = Default;
-            }
-
-            return success;
-        }
-
-        /// <summary>
         /// 文字列を検証します。
         /// </summary>
         /// <param name="s">文字列</param>
         /// <param name="message">メッセージ</param>
         /// <returns>検証に成功した場合は、 <c>true</c>。それ以外の場合は、 <c>false</c>。</returns>
-        private static bool Validate(string s, out string message)
+        public static bool Validate(string s, out string message)
         {
             bool success = s.Length <= <#= _context.MaximumLength #>;
 
