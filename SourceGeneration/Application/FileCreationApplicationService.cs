@@ -24,6 +24,7 @@ namespace SourceGeneration.Application
                 FileTypeId.ValueObjectStringPattern => "valueobject_string_pattern.json",
                 FileTypeId.Entity => "entity.json",
                 FileTypeId.Data => "data.json",
+                FileTypeId.TemporaryData => "temporary_data.json",
                 _ => throw new InvalidOperationException("ファイル種別が定義されていません。"),
             };
 

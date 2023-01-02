@@ -1,0 +1,21 @@
+{
+  "FileType": "TemporaryData",
+  "Usings": [],
+  "NamespacePath": "TestNamespace",
+  "ClassNameEnglish": "TestClass",
+  "ClassNameJapanese": "テストクラス",
+  "Properties": [
+    {
+      "Attributes": [],
+      "TypeName": "string",
+      "PropertyNameEnglish": "Property1",
+      "PropertyNameJapanese": "プロパティ1"
+    },
+    {
+      "Attributes": [],
+      "TypeName": "int",
+      "PropertyNameEnglish": "Property2",
+      "PropertyNameJapanese": "プロパティ2"
+    }
+  ]
+}

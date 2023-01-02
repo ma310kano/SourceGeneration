@@ -34,5 +34,10 @@
         /// データ
         /// </summary>
         Data,
+
+        /// <summary>
+        /// 一時データ
+        /// </summary>
+        TemporaryData,
     }
 }

@@ -1,0 +1,43 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<# foreach (string path in _context.Usings) { #>
+using <#= path #>;
+<# } #>
+<# if (_context.Usings.Any()) { #>
+
+<# } #>
+namespace <#= _context.NamespacePath #>
+{
+    /// <summary>
+    /// <#= _context.ClassNameJapanese #>
+    /// </summary>
+	public class <#= _context.ClassNameEnglish #>
+	{
+		#region Properties
+
+<# foreach (PropertyContext property in _context.Properties) { #>
+		/// <summary>
+		/// <#= property.PropertyNameJapanese #>を取得します。
+		/// </summary>
+<# foreach (string attribute in property.Attributes) { #>
+		[<#= attribute #>]
+<# } #>
+		public <#= property.TypeName #> <#= property.PropertyNameEnglish #> { get; set; }
+
+<# } #>
+		#endregion
+		
+        #region Methods
+
+        /// <summary>
+        /// 現在のオブジェクトを表す文字列を返します。
+        /// </summary>
+        /// <returns>現在のオブジェクトを表す文字列。</returns>
+        public override string ToString()
+		{
+			return $"{nameof(<#= _context.ClassNameEnglish #>)} {{ <#= string.Join(", ", _context.Properties.Select(x => $"{{nameof({x.PropertyNameEnglish})}} = {{{x.PropertyNameEnglish}}}")) #> }}";
+		}
+
+		#endregion
+	}
+}

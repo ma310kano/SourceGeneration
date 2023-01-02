@@ -105,6 +105,9 @@ namespace SourceGeneration.Application
                 case FileTypeId.Data:
                     ConvertDataFile(json, destinationDirectoryPath);
                     break;
+                case FileTypeId.TemporaryData:
+                    ConvertTemporaryDataFile(json, destinationDirectoryPath);
+                    break;
                 default:
                     throw new InvalidOperationException("ファイル種別の定義がありません。");
             }
@@ -284,6 +287,36 @@ namespace SourceGeneration.Application
             string contents;
             {
                 DataTemplate template = new(context);
+                contents = template.TransformText();
+            }
+
+            File.WriteAllText(filePath, contents);
+        }
+
+        /// <summary>
+        /// ファイルを変換します。
+        /// </summary>
+        /// <param name="json">JSON文字列</param>
+        /// <param name="destinationDirectoryPath">変換先のディレクトリーパス</param>
+        private static void ConvertTemporaryDataFile(string json, string destinationDirectoryPath)
+        {
+            Port.Adapters.TemporaryData.Context context;
+            {
+                Port.Adapters.TemporaryData.Context? nullableContext = JsonSerializer.Deserialize<Port.Adapters.TemporaryData.Context>(json);
+                if (nullableContext is null) throw new InvalidOperationException("無効な JSON ファイルです。");
+
+                context = nullableContext;
+            }
+
+            string filePath;
+            {
+                string fileName = context.ClassNameEnglish + ".cs";
+                filePath = Path.Combine(destinationDirectoryPath, fileName);
+            }
+
+            string contents;
+            {
+                Port.Adapters.TemporaryData.Template template = new(context);
                 contents = template.TransformText();
             }
 

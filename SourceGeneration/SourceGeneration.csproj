@@ -28,6 +28,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EntityTemplate.cs</LastGenOutput>
     </None>
+    <None Update="Port.Adapters\TemporaryData\Template.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Template.cs</LastGenOutput>
+    </None>
     <None Update="Port.Adapters\ValueObjectInt32Template.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ValueObjectInt32Template.cs</LastGenOutput>
@@ -39,6 +43,9 @@
     <None Update="Port.Adapters\ValueObjectStringPatternTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ValueObjectStringPatternTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="templates\temporary_data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="templates\entity.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -82,6 +89,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Port.Adapters\TemporaryData\Template.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Template.tt</DependentUpon>
     </Compile>
     <Compile Update="Port.Adapters\ValueObjectInt32Template.cs">
       <DesignTime>True</DesignTime>

@@ -23,6 +23,7 @@ namespace SourceGeneration.Application
                 new FileTypeData(FileTypeId.ValueObjectStringPattern, "値オブジェクト(文字列 - パターン)", "valueobject_string_pattern.json"),
                 new FileTypeData(FileTypeId.Entity, "エンティティ", "entity.json"),
                 new FileTypeData(FileTypeId.Data, "データ", "data.json"),
+                new FileTypeData(FileTypeId.TemporaryData, "一時データ", "temporary_data.json"),
             };
 
             return fileTypes;
