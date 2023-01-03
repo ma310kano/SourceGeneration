@@ -1,9 +1,11 @@
 ﻿using ConversionApp.Views;
+using Microsoft.Extensions.Configuration;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 using Prism.Unity;
 using SourceGeneration.Application;
+using System.IO;
 using System.Windows;
 
 namespace ConversionApp
@@ -30,6 +32,12 @@ namespace ConversionApp
         /// <param name="containerRegistry">コンテナーのレジストリー</param>
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            IConfiguration configuration = new ConfigurationBuilder().
+                SetBasePath(Directory.GetCurrentDirectory()).
+                AddJsonFile("appsettings.json").
+                Build();
+
+            containerRegistry.RegisterInstance(configuration);
         }
 
         /// <summary>

@@ -1,10 +1,13 @@
-﻿using Microsoft.Win32;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Win32;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using Prism.Mvvm;
 using Prism.Regions;
 using Reactive.Bindings;
 using SourceGeneration.Application;
 using SourceGeneration.Application.Command;
 using SourceGeneration.Application.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Concurrency;
@@ -29,6 +32,11 @@ namespace ConversionApp.ViewModels
         /// </summary>
         private readonly IFileCreationApplicationService _fileCreationApplicationService;
 
+        /// <summary>
+        /// 作成先のディレクトリーパス
+        /// </summary>
+        private readonly string _destinationDirPath;
+
         #endregion
 
         #region Constructors
@@ -36,9 +44,13 @@ namespace ConversionApp.ViewModels
         /// <summary>
         /// ファイルを新規作成する画面(ViewModel)を初期化します。
         /// </summary>
+        /// <param name="configuration">設定</param>
         /// <param name="fileTypeQueryService">ファイル種別のクエリサービス</param>
         /// <param name="fileCreationApplicationService">ファイルを作成するアプリケーションサービス</param>
-        public NewFileCreationViewModel(IFileTypeQueryService fileTypeQueryService, IFileCreationApplicationService fileCreationApplicationService)
+        public NewFileCreationViewModel(
+            IConfiguration configuration,
+            IFileTypeQueryService fileTypeQueryService,
+            IFileCreationApplicationService fileCreationApplicationService)
         {
             _fileTypeQueryService = fileTypeQueryService;
             _fileCreationApplicationService = fileCreationApplicationService;
@@ -46,6 +58,13 @@ namespace ConversionApp.ViewModels
             FileTypeItems = new ReactiveCollection<FileTypeItemViewModel>(Scheduler.Immediate);
             FileTypeItem = new ReactivePropertySlim<FileTypeItemViewModel>();
             CreateFileCommand = new AsyncReactiveCommand().WithSubscribe(CreateFileAsync);
+
+            {
+                string? destinationDirPath = configuration.GetValue<string>("FileSystem:FileCreation:DefaultDestinationDirectoryPath");
+                if (destinationDirPath is null) throw new InvalidOperationException("作成先のディレクトリーパスが取得できません。");
+
+                _destinationDirPath = destinationDirPath;
+            }
         }
 
         #endregion
@@ -124,12 +143,18 @@ namespace ConversionApp.ViewModels
         /// </summary>
         private async Task CreateFileAsync()
         {
-            SaveFileDialog dialog = new();
-            dialog.FileName = FileTypeItem.Value.FileName.Value;
-            dialog.Filter = "JSON ファイル (*.json)|*.json|すべてのファイル (*.*)|*.*";
+            CommonSaveFileDialog dialog = new()
+            {
+                DefaultFileName = FileTypeItem.Value.FileName.Value,
+                InitialDirectory = _destinationDirPath,
+                RestoreDirectory = true,
+            };
 
-            bool isClickedOk = dialog.ShowDialog() ?? false;
-            if (!isClickedOk) return;
+            dialog.Filters.Add(new CommonFileDialogFilter("JSON ファイル (*.json)", "*.json"));
+            dialog.Filters.Add(new CommonFileDialogFilter("すべてのファイル (*.*)", "*.*"));
+
+            CommonFileDialogResult result = dialog.ShowDialog();
+            if (result != CommonFileDialogResult.Ok) return;
 
             FileCreationCommand command = new(FileTypeItem.Value.FileTypeId.Value, dialog.FileName);
 

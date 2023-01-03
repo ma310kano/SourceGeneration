@@ -1,8 +1,10 @@
-﻿using Microsoft.WindowsAPICodePack.Dialogs;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using Prism.Mvvm;
 using Reactive.Bindings;
 using SourceGeneration.Application;
 using SourceGeneration.Application.Command;
+using System;
 using System.Threading.Tasks;
 
 namespace ConversionApp.ViewModels
@@ -19,6 +21,16 @@ namespace ConversionApp.ViewModels
         /// </summary>
         private readonly IFileConversionApplicationService _fileConversionService;
 
+        /// <summary>
+        /// 変換元のディレクトリーパス
+        /// </summary>
+        private readonly string _sourceDirPath;
+
+        /// <summary>
+        /// 変換先のディレクトリーパス
+        /// </summary>
+        private readonly string _destinationDirPath;
+
         #endregion
 
         #region Constructors
@@ -26,14 +38,35 @@ namespace ConversionApp.ViewModels
         /// <summary>
         /// 複数のファイルを変換する画面(ViewModel)を初期化します。
         /// </summary>
+        /// <param name="configuration">設定</param>
         /// <param name="fileConversionService">ファイルを変換するサービス</param>
-        public MultipleFileConversionViewModel(IFileConversionApplicationService fileConversionService)
+        public MultipleFileConversionViewModel(
+            IConfiguration configuration,
+            IFileConversionApplicationService fileConversionService)
         {
             _fileConversionService = fileConversionService;
 
             SourceDirectoryPath = new ReactivePropertySlim<string>();
             SelectSourceDirectoryCommand = new ReactiveCommand().WithSubscribe(SelectSourceDirectory);
             ConvertFileCommand = new AsyncReactiveCommand().WithSubscribe(ConvertFile);
+
+            {
+                IConfigurationSection fileConversionSection = configuration.GetSection("FileSystem:FileConversion");
+
+                {
+                    string? sourceDirPath = fileConversionSection.GetValue<string>("DefaultSourceDirectoryPath");
+                    if (sourceDirPath is null) throw new InvalidOperationException("変換元のディレクトリーパスを取得できません。");
+
+                    _sourceDirPath = sourceDirPath;
+                }
+
+                {
+                    string? destinationDirPath = fileConversionSection.GetValue<string>("DefaultDestinationDirectoryPath");
+                    if (destinationDirPath is null) throw new InvalidOperationException("変換先のディレクトリーパスを取得できません。");
+
+                    _destinationDirPath = destinationDirPath;
+                }
+            }
         }
 
         #endregion
@@ -66,7 +99,9 @@ namespace ConversionApp.ViewModels
         {
             CommonOpenFileDialog dialog = new()
             {
+                InitialDirectory = _sourceDirPath,
                 IsFolderPicker = true,
+                RestoreDirectory = true,
             };
 
             CommonFileDialogResult result = dialog.ShowDialog();
@@ -83,7 +118,9 @@ namespace ConversionApp.ViewModels
         {
             CommonOpenFileDialog dialog = new()
             {
+                InitialDirectory = _destinationDirPath,
                 IsFolderPicker = true,
+                RestoreDirectory = true,
             };
 
             CommonFileDialogResult result = dialog.ShowDialog();
