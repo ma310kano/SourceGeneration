@@ -9,13 +9,15 @@
       "Attributes": [],
       "TypeName": "string",
       "PropertyNameEnglish": "Property1",
-      "PropertyNameJapanese": "プロパティ1"
+      "PropertyNameJapanese": "プロパティ1",
+      "InitialValue": ""
     },
     {
       "Attributes": [],
       "TypeName": "int",
       "PropertyNameEnglish": "Property2",
-      "PropertyNameJapanese": "プロパティ2"
+      "PropertyNameJapanese": "プロパティ2",
+      "InitialValue": ""
     }
   ]
 }

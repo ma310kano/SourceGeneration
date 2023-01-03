@@ -14,16 +14,19 @@
         /// <param name="typeName">型名</param>
         /// <param name="propertyNameEnglish">プロパティ名(英)</param>
         /// <param name="propertyNameJapanese">プロパティ名(日)</param>
+        /// <param name="initialValue">初期値</param>
         public PropertyContext(
             IReadOnlyCollection<string> attributes,
             string typeName,
             string propertyNameEnglish,
-            string propertyNameJapanese)
+            string propertyNameJapanese,
+            string initialValue)
         {
             Attributes = attributes;
             TypeName = typeName;
             PropertyNameEnglish = propertyNameEnglish;
             PropertyNameJapanese = propertyNameJapanese;
+            InitialValue = initialValue;
         }
 
         #endregion
@@ -49,6 +52,11 @@
         /// プロパティ名(日)を取得します。
         /// </summary>
         public string PropertyNameJapanese { get; }
+
+        /// <summary>
+        /// 初期値を取得します。
+        /// </summary>
+        public string InitialValue { get; }
 
         #endregion
 

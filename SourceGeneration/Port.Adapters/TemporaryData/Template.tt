@@ -22,7 +22,7 @@ namespace <#= _context.NamespacePath #>
 <# foreach (string attribute in property.Attributes) { #>
 		[<#= attribute #>]
 <# } #>
-		public <#= property.TypeName #> <#= property.PropertyNameEnglish #> { get; set; }
+		public <#= property.TypeName #> <#= property.PropertyNameEnglish #> { get; set; }<# if (!string.IsNullOrEmpty(property.InitialValue)) Write($" = {property.InitialValue};"); #>
 
 <# } #>
 		#endregion

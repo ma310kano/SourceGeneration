@@ -128,7 +128,14 @@ namespace SourceGeneration.Port.Adapters.TemporaryData
             
             #line default
             #line hidden
-            this.Write(" { get; set; }\r\n\r\n");
+            this.Write(" { get; set; }");
+            
+            #line 25 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+ if (!string.IsNullOrEmpty(property.InitialValue)) Write($" = {property.InitialValue};"); 
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
             
             #line 27 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
  } 
