@@ -1,16 +1,16 @@
-﻿namespace SourceGeneration.Port.Adapters
+﻿namespace SourceGeneration.Port.Adapters.Data
 {
     /// <summary>
-    /// データのテンプレート
+    /// テンプレート
     /// </summary>
-    public partial class DataTemplate
+    public partial class Template
     {
         #region Fields
 
         /// <summary>
         /// コンテキスト
         /// </summary>
-        private readonly DataContext _context;
+        private readonly Context _context;
 
         #endregion
 
@@ -20,7 +20,7 @@
         /// データのテンプレートを初期化します。
         /// </summary>
         /// <param name="context">コンテキスト</param>
-        public DataTemplate(DataContext context)
+        public Template(Context context)
         {
             _context = context;
         }

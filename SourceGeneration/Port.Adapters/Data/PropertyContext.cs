@@ -1,9 +1,9 @@
-﻿namespace SourceGeneration.Port.Adapters
+﻿namespace SourceGeneration.Port.Adapters.Data
 {
     /// <summary>
-    /// データのコンテキストのプロパティ
+    /// コンテキストのプロパティ
     /// </summary>
-    public class DataContextProperty
+    public class PropertyContext
     {
         #region Constructors
 
@@ -13,7 +13,7 @@
         /// <param name="typeName">型名</param>
         /// <param name="propertyNameEnglish">プロパティ名(英)</param>
         /// <param name="propertyNameJapanese">プロパティ名(日)</param>
-        public DataContextProperty(
+        public PropertyContext(
             string typeName,
             string propertyNameEnglish,
             string propertyNameJapanese)
@@ -57,7 +57,7 @@
         /// <returns>現在のオブジェクトを表す文字列。</returns>
         public override string ToString()
         {
-            return $"{nameof(DataContextProperty)} {{ {nameof(TypeName)} = {TypeName}, {nameof(PropertyNameEnglish)} = {PropertyNameEnglish}, {nameof(PropertyNameJapanese)} = {PropertyNameJapanese} }}";
+            return $"{nameof(PropertyContext)} {{ {nameof(TypeName)} = {TypeName}, {nameof(PropertyNameEnglish)} = {PropertyNameEnglish}, {nameof(PropertyNameJapanese)} = {PropertyNameJapanese} }}";
         }
 
         #endregion

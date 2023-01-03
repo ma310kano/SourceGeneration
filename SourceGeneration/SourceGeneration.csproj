@@ -62,9 +62,9 @@
     <None Update="templates\valueobject_uuid.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Port.Adapters\DataTemplate.tt">
+    <None Update="Port.Adapters\Data\Template.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>DataTemplate.cs</LastGenOutput>
+      <LastGenOutput>Template.cs</LastGenOutput>
     </None>
     <None Update="Port.Adapters\ValueObjectUuidTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -80,10 +80,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Port.Adapters\DataTemplate.cs">
+    <Compile Update="Port.Adapters\Data\Template.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>DataTemplate.tt</DependentUpon>
+      <DependentUpon>Template.tt</DependentUpon>
     </Compile>
     <Compile Update="Port.Adapters\EntityTemplate.cs">
       <DesignTime>True</DesignTime>

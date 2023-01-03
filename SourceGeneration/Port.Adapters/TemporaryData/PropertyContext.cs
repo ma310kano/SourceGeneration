@@ -68,7 +68,7 @@
         /// <returns>現在のオブジェクトを表す文字列。</returns>
         public override string ToString()
         {
-            return $"{nameof(DataContextProperty)} {{ {nameof(Attributes)} = {Attributes}, {nameof(TypeName)} = {TypeName}, {nameof(PropertyNameEnglish)} = {PropertyNameEnglish} }}";
+            return $"{nameof(PropertyContext)} {{ {nameof(Attributes)} = {Attributes}, {nameof(TypeName)} = {TypeName}, {nameof(PropertyNameEnglish)} = {PropertyNameEnglish} }}";
         }
 
         #endregion

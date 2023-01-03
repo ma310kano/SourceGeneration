@@ -1,9 +1,9 @@
-﻿namespace SourceGeneration.Port.Adapters
+﻿namespace SourceGeneration.Port.Adapters.Data
 {
     /// <summary>
     /// データのコンテキスト
     /// </summary>
-    public class DataContext
+    public class Context
     {
         #region Constructors
 
@@ -14,11 +14,11 @@
         /// <param name="classNameEnglish">クラス名(英)</param>
         /// <param name="classNameJapanese">クラス名(日)</param>
         /// <param name="properties">プロパティのコレクション</param>
-        public DataContext(
+        public Context(
             string namespacePath,
             string classNameEnglish,
             string classNameJapanese,
-            IReadOnlyCollection<DataContextProperty> properties)
+            IReadOnlyCollection<PropertyContext> properties)
         {
             NamespacePath = namespacePath;
             ClassNameEnglish = classNameEnglish;
@@ -48,7 +48,7 @@
         /// <summary>
         /// プロパティのコレクションを取得します。
         /// </summary>
-        public IReadOnlyCollection<DataContextProperty> Properties { get; }
+        public IReadOnlyCollection<PropertyContext> Properties { get; }
 
         #endregion
 
@@ -60,7 +60,7 @@
         /// <returns>現在のオブジェクトを表す文字列。</returns>
         public override string ToString()
         {
-            return $"{nameof(DataContext)} {{ {nameof(NamespacePath)} = {NamespacePath}, {nameof(ClassNameEnglish)} = {ClassNameEnglish}, {nameof(ClassNameJapanese)} = {ClassNameJapanese}, {nameof(Properties)} = {Properties} }}";
+            return $"{nameof(Context)} {{ {nameof(NamespacePath)} = {NamespacePath}, {nameof(ClassNameEnglish)} = {ClassNameEnglish}, {nameof(ClassNameJapanese)} = {ClassNameJapanese}, {nameof(Properties)} = {Properties} }}";
         }
 
         #endregion

@@ -270,9 +270,9 @@ namespace SourceGeneration.Application
         /// <param name="destinationDirectoryPath">変換先のディレクトリーパス</param>
         private static void ConvertDataFile(string json, string destinationDirectoryPath)
         {
-            DataContext context;
+            Port.Adapters.Data.Context context;
             {
-                DataContext? nullableContext = JsonSerializer.Deserialize<DataContext>(json);
+                Port.Adapters.Data.Context? nullableContext = JsonSerializer.Deserialize<Port.Adapters.Data.Context>(json);
                 if (nullableContext is null) throw new InvalidOperationException("無効な JSON ファイルです。");
 
                 context = nullableContext;
@@ -286,7 +286,7 @@ namespace SourceGeneration.Application
 
             string contents;
             {
-                DataTemplate template = new(context);
+                Port.Adapters.Data.Template template = new(context);
                 contents = template.TransformText();
             }
 
