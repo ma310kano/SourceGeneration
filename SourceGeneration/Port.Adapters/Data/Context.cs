@@ -10,16 +10,19 @@
         /// <summary>
         /// データのコンテキストを初期化します。
         /// </summary>
+        /// <param name="usings">using ディレクティブのコレクション</param>
         /// <param name="namespacePath">名前空間のパス</param>
         /// <param name="classNameEnglish">クラス名(英)</param>
         /// <param name="classNameJapanese">クラス名(日)</param>
         /// <param name="properties">プロパティのコレクション</param>
         public Context(
+            IReadOnlyCollection<string> usings,
             string namespacePath,
             string classNameEnglish,
             string classNameJapanese,
             IReadOnlyCollection<PropertyContext> properties)
         {
+            Usings = usings;
             NamespacePath = namespacePath;
             ClassNameEnglish = classNameEnglish;
             ClassNameJapanese = classNameJapanese;
@@ -29,6 +32,11 @@
         #endregion
 
         #region Properties
+
+        /// <summary>
+        /// using ディレクティブのコレクションを取得します。
+        /// </summary>
+        public IReadOnlyCollection<string> Usings { get; }
 
         /// <summary>
         /// 名前空間のパスを取得します。
@@ -60,7 +68,7 @@
         /// <returns>現在のオブジェクトを表す文字列。</returns>
         public override string ToString()
         {
-            return $"{nameof(Context)} {{ {nameof(NamespacePath)} = {NamespacePath}, {nameof(ClassNameEnglish)} = {ClassNameEnglish}, {nameof(ClassNameJapanese)} = {ClassNameJapanese}, {nameof(Properties)} = {Properties} }}";
+            return $"{nameof(Context)} {{ {nameof(Usings)} = {Usings}, {nameof(NamespacePath)} = {NamespacePath}, {nameof(ClassNameEnglish)} = {ClassNameEnglish}, {nameof(ClassNameJapanese)} = {ClassNameJapanese}, {nameof(Properties)} = {Properties} }}";
         }
 
         #endregion

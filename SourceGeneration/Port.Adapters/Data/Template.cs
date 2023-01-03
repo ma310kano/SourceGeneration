@@ -25,135 +25,168 @@ namespace SourceGeneration.Port.Adapters.Data
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("namespace ");
             
             #line 3 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+ foreach (string path in _context.Usings) { 
+            
+            #line default
+            #line hidden
+            this.Write("using ");
+            
+            #line 4 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(path));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n");
+            
+            #line 5 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+ } 
+            
+            #line default
+            #line hidden
+            
+            #line 6 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+ if (_context.Usings.Any()) { 
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 8 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("namespace ");
+            
+            #line 9 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.NamespacePath));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 6 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 12 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("\r\n    /// </summary>\r\n\tpublic class ");
             
-            #line 8 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 14 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
             #line hidden
             this.Write("\r\n\t{\r\n\t\t#region Constructors\r\n\r\n\t\t/// <summary>\r\n\t\t/// ");
             
-            #line 13 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 19 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameJapanese));
             
             #line default
             #line hidden
             this.Write("を初期化します。\r\n\t\t/// </summary>\r\n");
             
-            #line 15 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 21 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
  foreach (PropertyContext property in _context.Properties) { 
             
             #line default
             #line hidden
             this.Write("\t\t/// <param name=\"");
             
-            #line 16 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 22 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.ConstructorParameterName));
             
             #line default
             #line hidden
             this.Write("\">");
             
-            #line 16 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 22 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.PropertyNameJapanese));
             
             #line default
             #line hidden
             this.Write("</param>\r\n");
             
-            #line 17 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 23 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\t\tpublic ");
             
-            #line 18 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 24 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 18 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 24 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(", ", _context.Properties.Select(x => $"{x.TypeName} {x.ConstructorParameterName}"))));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t{\r\n");
             
-            #line 20 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 26 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
  foreach (PropertyContext property in _context.Properties) { 
             
             #line default
             #line hidden
             this.Write("\t\t\t");
             
-            #line 21 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 27 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.PropertyNameEnglish));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 21 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 27 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.ConstructorParameterName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 22 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 28 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\t\t}\r\n\r\n\t\t#endregion\r\n\r\n\t\t#region Properties\r\n\r\n");
             
-            #line 29 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 35 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
  foreach (PropertyContext property in _context.Properties) { 
             
             #line default
             #line hidden
             this.Write("\t\t/// <summary>\r\n\t\t/// ");
             
-            #line 31 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 37 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.PropertyNameJapanese));
             
             #line default
             #line hidden
             this.Write("を取得します。\r\n\t\t/// </summary>\r\n\t\tpublic ");
             
-            #line 33 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 39 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.TypeName));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 33 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 39 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.PropertyNameEnglish));
             
             #line default
             #line hidden
             this.Write(" { get; }\r\n\r\n");
             
-            #line 35 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 41 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
  } 
             
             #line default
@@ -163,14 +196,14 @@ namespace SourceGeneration.Port.Adapters.Data
                     "字列。</returns>\r\n        public override string ToString()\r\n\t\t{\r\n\t\t\treturn $\"{name" +
                     "of(");
             
-            #line 46 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 52 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
             #line hidden
             this.Write(")} {{ ");
             
-            #line 46 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
+            #line 52 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\Data\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(", ", _context.Properties.Select(x => $"{{nameof({x.PropertyNameEnglish})}} = {{{x.PropertyNameEnglish}}}"))));
             
             #line default

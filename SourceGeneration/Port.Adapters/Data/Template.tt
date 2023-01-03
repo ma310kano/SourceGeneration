@@ -1,5 +1,11 @@
 ﻿<#@ template language="C#" #>
 <#@ assembly name="System.Core" #>
+<# foreach (string path in _context.Usings) { #>
+using <#= path #>;
+<# } #>
+<# if (_context.Usings.Any()) { #>
+
+<# } #>
 namespace <#= _context.NamespacePath #>
 {
     /// <summary>
