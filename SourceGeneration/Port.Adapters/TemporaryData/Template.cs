@@ -114,30 +114,64 @@ namespace SourceGeneration.Port.Adapters.TemporaryData
             
             #line default
             #line hidden
-            this.Write("\t\tpublic ");
             
             #line 25 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+ if (string.IsNullOrEmpty(property.InitialValue)) { 
+            
+            #line default
+            #line hidden
+            this.Write("\t\tpublic ");
+            
+            #line 26 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.TypeName));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 25 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+            #line 26 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.PropertyNameEnglish));
             
             #line default
             #line hidden
-            this.Write(" { get; set; }");
+            this.Write(" { get; set; }\r\n");
             
-            #line 25 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
- if (!string.IsNullOrEmpty(property.InitialValue)) Write($" = {property.InitialValue};"); 
+            #line 27 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+ } else { 
+            
+            #line default
+            #line hidden
+            this.Write("\t\tpublic ");
+            
+            #line 28 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(property.TypeName));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
+            
+            #line 28 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(property.PropertyNameEnglish));
+            
+            #line default
+            #line hidden
+            this.Write(" { get; set; } = ");
+            
+            #line 28 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(property.InitialValue));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n");
+            
+            #line 29 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+ } 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 27 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+            #line 31 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
  } 
             
             #line default
@@ -147,14 +181,14 @@ namespace SourceGeneration.Port.Adapters.TemporaryData
                     "字列。</returns>\r\n        public override string ToString()\r\n\t\t{\r\n\t\t\treturn $\"{name" +
                     "of(");
             
-            #line 38 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+            #line 42 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_context.ClassNameEnglish));
             
             #line default
             #line hidden
             this.Write(")} {{ ");
             
-            #line 38 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
+            #line 42 "C:\Users\ma310\source\repos\SourceGeneration\SourceGeneration\Port.Adapters\TemporaryData\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(", ", _context.Properties.Select(x => $"{{nameof({x.PropertyNameEnglish})}} = {{{x.PropertyNameEnglish}}}"))));
             
             #line default
